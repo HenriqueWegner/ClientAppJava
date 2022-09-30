@@ -1,5 +1,6 @@
 package io.github.HenriqueWegner.ClientsApp.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Client {
     private String cpf;
 
     @Column(name = "registration_date")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate registrationDate;
 
     @PrePersist
